@@ -1,0 +1,7 @@
+What You'll Learn
+Name and define the four primary threat actor categories: nation-state actors, cybercriminals, insider threats, and hacktivists
+Explain what distinguishes each category by motivation, not just by technique
+Describe how nation-states disguise operations as cybercrime and why that matters for attribution
+Explain the RaaS business model and how double extortion works
+Classify real threat actors from 2024–2025 into the correct category and articulate why edge cases are genuinely ambiguous
+Explain why attribution is not your primary job during an active incident
