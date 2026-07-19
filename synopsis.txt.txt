@@ -23,3 +23,10 @@ In this module, you'll learn to tell four types of threat actors apart, understa
 and practice applying that framework to real groups you'll actually encounter in the field.
 By the end, you won't just know the categories. 
 You'll know why they're hard to apply and what to do with that uncertainty.
+
+================================================================================================
+
+Modern ransomware operations look more like logistics companies than underground gangs. 
+They have developers, operators, recruiters, negotiators, and customer service representatives. 
+They run affiliate programs with revenue splits. 
+There are dark web job postings with competitive pay and performance reviews.
