@@ -30,3 +30,10 @@ Modern ransomware operations look more like logistics companies than underground
 They have developers, operators, recruiters, negotiators, and customer service representatives. 
 They run affiliate programs with revenue splits. 
 There are dark web job postings with competitive pay and performance reviews.
+
+The business model that made all of this possible is called Ransomware as a Service, or RaaS. It works exactly like it sounds. 
+Ransomware developers build the malware, maintain the infrastructure, and lease it out to affiliates who do the actual intrusions. 
+Affiliates keep 60 to 80 percent of whatever ransom they collect. The operator takes the rest and never has to touch a victim network.
+
+This separation split the people who build weapons from the people who use them, 
+and it dramatically lowered the barrier to entry for anyone who wants to run a ransomware campaign but doesn't know how to write malware.
