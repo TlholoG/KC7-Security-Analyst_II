@@ -1,0 +1,7 @@
+// Click inside a query and press Shift+Enter to run it.
+// Separate queries with a blank line.
+Employees
+| take 10
+
+Employees
+| summarize count() by company_domain
