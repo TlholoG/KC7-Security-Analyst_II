@@ -1,7 +1,5 @@
-// Click inside a query and press Shift+Enter to run it.
-// Separate queries with a blank line.
-Employees
-| take 10
 
-Employees
-| summarize count() by company_domain
+//counting how many (network zones) does Whiskers & Wonders have?
+DeviceInfo
+| summarize device_count=count() by vlan
+| order by device_count desc 
