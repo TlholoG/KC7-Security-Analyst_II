@@ -3,3 +3,20 @@
 DeviceInfo
 | summarize device_count=count() by vlan
 | order by device_count desc 
+
+DeviceInfo
+| where vlan == "dmz"
+| project name, ip_address, host_type
+
+DeviceInfo
+| where vlan == "servers"
+| project name, ip_address
+
+DeviceInfo
+| where vlan == "restricted"
+| project name, ip_address, host_type
+
+DeviceInfo
+| where ip_address startswith "10.10.1."
+| project name, ip_address, vlan
+|take 5 
