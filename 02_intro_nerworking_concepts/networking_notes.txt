@@ -62,3 +62,8 @@ CNAME record - Creates an alias pointing to another domain
 
 TTL (Time To Live) tells the client how long to cache the result before asking again. 
 A TTL of 300 means "remember this answer for 300 seconds."
+
+If malware needs to contact an attacker's server, it has to look up the address first. 
+That lookup gets logged. 
+DNS is a record of intent: 
+you can see what domains a device tried to reach, even if the connection itself was encrypted.
