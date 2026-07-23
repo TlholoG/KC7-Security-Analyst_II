@@ -20,3 +20,26 @@ DeviceInfo
 | where ip_address startswith "10.10.1."
 | project name, ip_address, vlan
 |take 5 
+
+//checkig common ports used by Whiskers & Wonders
+NetworkFlow
+| summarize traffic=count() by dest_port
+| order by traffic desc
+| take 5
+
+NetworkFlow
+| where dest_port == 53
+| summarize count() by protocol
+
+NetworkFlow
+| summarize count() by protocol
+| order by count_ desc 
+
+DnsEvents
+| take 5 
+| project timestamp, client_ip, query_name, resolved_ips, dns_server
+
+
+DnsEvents
+| take 5
+| project query_name, query_type, ttl

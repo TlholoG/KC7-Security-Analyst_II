@@ -22,4 +22,43 @@ Certain ports are standardized. You'll see these constantly:
 80 - HTTP (unencrypted web traffic)
 443 - HTTPS (encrypted web traffic)
 3389 - RDP (Windows remote desktop)
-Memorize these. When you see a connection on port 443, you know it's HTTPS. When you see port 22, someone is using SSH.
+Memorize these. When you see a connection on port 443, you know it's HTTPS. 
+When you see port 22, someone is using SSH.
+
+====================================================================================================================
+
+There are two main ways data moves on a network:
+
+TCP (Transmission Control Protocol) is reliable and ordered. 
+It establishes a connection first (a "handshake"), confirms delivery, and resends anything that gets lost. 
+Most traffic uses TCP: web browsing, email, file transfers.
+
+UDP (User Datagram Protocol) is fast but unreliable. It just sends packets without confirming they arrived. 
+This is fine for things like DNS lookups or video streaming where speed matters more than perfection.
+
+====================================================================================================================
+
+When you type a website name into your browser, your computer doesn't actually know where that website lives. 
+It has to ask. 
+It sends a query to the DNS server saying "what's the IP address for google.com?" and the DNS server responds with the answer.
+
+┌─────────────┐                    ┌────────────┐
+│ WORKSTATION │   1. Query         │ DNS SERVER │
+│ User types: │───────────────────►│            │
+│ google.com  │                    │ "What IP   │
+│             │   2. Response      │  is this?" │
+│             │◄───────────────────│            │
+│             │   142.250.80.46    │            │
+└─────────────┘                    └────────────┘
+
+
+DNS records come in different types:
+
+A record - Maps a domain to an IPv4 address (google.com → 142.250.80.46)
+AAAA record - Maps a domain to an IPv6 address
+MX record - Identifies the mail server for a domain
+CNAME record - Creates an alias pointing to another domain
+
+
+TTL (Time To Live) tells the client how long to cache the result before asking again. 
+A TTL of 300 means "remember this answer for 300 seconds."
