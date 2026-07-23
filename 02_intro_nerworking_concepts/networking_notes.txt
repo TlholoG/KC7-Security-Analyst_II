@@ -67,3 +67,45 @@ If malware needs to contact an attacker's server, it has to look up the address 
 That lookup gets logged. 
 DNS is a record of intent: 
 you can see what domains a device tried to reach, even if the connection itself was encrypted.
+
+====================================================================================================================
+
+When someone browses to a website, multiple things happen in sequence, and each step creates a log entry.
+
+┌─────────────────┐      ┌─────────────┐      ┌─────────────┐      ┌─────────────┐
+│   WORKSTATION   │      │     DNS     │      │    PROXY    │      │  INTERNET   │
+│   10.10.16.14   │      │  10.10.1.7  │      │  10.10.0.1  │      │             │
+└────────┬────────┘      └──────┬──────┘      └──────┬──────┘      └──────┬──────┘
+         │                      │                    │                    │
+         │  1. DNS Query (:53)  │                    │                    │
+         │─────────────────────►│                    │                    │
+         │◄─────────────────────│                    │                    │
+         │  2. Response: IP     │                    │                    │
+         │                      │                    │                    │
+         │  3. HTTPS Request (:443)                  │                    │
+         │──────────────────────────────────────────►│                    │
+         │                                           │  4. Forward        │
+         │                                           │─────────────────────►
+         │                                           │◄────────────────────
+         │◄──────────────────────────────────────────│  5. Response       │
+
+
+First the DNS lookup (logged in DnsEvents), then the network connection (NetworkFlow), then the proxy processes it (ProxyEvents). 
+One user action, multiple log entries.
+
+====================================================================================================================
+
+HTTP status codes tell you what happened with a request:
+
+200 - OK, success
+301/302 - Redirect
+403 - Forbidden
+404 - Not Found
+500 - Server Error
+
+HTTP methods describe what the client is trying to do:
+
+GET - Retrieve data (most common for browsing)
+POST - Submit data (forms, uploads)
+PUT - Update data
+DELETE - Remove data
