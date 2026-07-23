@@ -3,3 +3,23 @@ You know about IP addresses now. But what's a port?
 Think of it this way: 
 the IP address gets you to the right building, but the port gets you to the specific apartment. 
 A server might run multiple services, and each service listens on a different port.
+
+          SERVER: 142.250.80.46
+     ┌─────────────────────────────┐
+     │  ┌─────┐ ┌─────┐ ┌─────┐    │
+     │  │ :22 │ │ :80 │ │:443 │    │
+     │  │ SSH │ │HTTP │ │HTTPS│    │
+     │  └─────┘ └─────┘ └─────┘    │
+     └─────────────────────────────┘
+
+Port numbers range from 0 to 65535.
+
+Certain ports are standardized. You'll see these constantly:
+
+22 - SSH (secure shell, remote command line access)
+25 - SMTP (sending email)
+53 - DNS (domain name lookups)
+80 - HTTP (unencrypted web traffic)
+443 - HTTPS (encrypted web traffic)
+3389 - RDP (Windows remote desktop)
+Memorize these. When you see a connection on port 443, you know it's HTTPS. When you see port 22, someone is using SSH.
