@@ -105,3 +105,19 @@ Email
 | where sender contains "whiskersandwonders"
 | project timestamp, sender, recipient, subject
 // we can see that there are emails being sent from external domains that contain the organization's name, which could indicate phishing attempts or impersonation.
+
+// Get phishing recipients
+Email
+| where sender contains "whiskersandwonders-hr.com"
+| distinct recipient
+
+// Compare to C2 DNS queries
+DnsEvents
+| where query_name contains "update-cdn-service.xyz"
+| distinct client_ip
+
+Email
+| where sender contains "whiskersandwonders-hr.com"
+| project timestamp, recipient
+| order by timestamp asc
+// we are building a timeline of events to see if there is any correlation between the phishing emails and the C2 DNS queries.
