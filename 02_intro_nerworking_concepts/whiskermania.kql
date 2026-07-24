@@ -135,3 +135,16 @@ DnsEvents
 | project name, username, role
 // we can see which employees are associated with the internal IPs that queried the C2 domain, which could help identify potential compromised accounts or insider threats.
 //  Further investigation is needed to determine the nature of their involvement and whether any security measures need to be taken.
+
+// Detection 1: DNS query to known C2
+DnsEvents
+| where query_name in ("update-cdn-service.xyz")
+
+// Detection 2: Traffic to C2 IP
+NetworkFlow
+| where dest_ip == "185.174.137.42"
+
+// Detection 3: Proxy pattern matching
+ProxyEvents
+| where url matches regex @"/api/v\d+/(status|config)"
+| where domain endswith ".xyz"
