@@ -78,3 +78,11 @@ DnsEvents
 | where query_name contains "update-cdn-service.xyz"
 | distinct client_ip
 // 3 distinct internal IPs queried this domain
+
+DnsEvents
+| where query_name contains "update-cdn-service.xyz"
+| summarize count() by client_ip
+| order by count_ desc
+// we see that this is an external domain that is being queried by multiple internal hosts, 
+// which is suspicious and could indicate a potential security threat or malware activity. 
+// Further investigation is needed to determine the nature of this domain and the intent of the internal hosts querying it.
