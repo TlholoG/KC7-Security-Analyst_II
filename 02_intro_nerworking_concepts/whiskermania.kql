@@ -121,3 +121,17 @@ Email
 | project timestamp, recipient
 | order by timestamp asc
 // we are building a timeline of events to see if there is any correlation between the phishing emails and the C2 DNS queries.
+
+DnsEvents
+| where query_name contains "update-cdn-service.xyz"
+| summarize first_query=min(timestamp) by client_ip
+| order by first_query asc
+// looking to see when the first C2 traffic started and if it correlates with the phishing emails.
+
+DnsEvents
+| where query_name contains "update-cdn-service.xyz"
+| distinct client_ip
+| join kind=inner (Employees | project ip_addr, name, username, role) on $left.client_ip == $right.ip_addr
+| project name, username, role
+// we can see which employees are associated with the internal IPs that queried the C2 domain, which could help identify potential compromised accounts or insider threats.
+//  Further investigation is needed to determine the nature of their involvement and whether any security measures need to be taken.
