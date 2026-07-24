@@ -6,3 +6,12 @@ Port 443 is HTTPS. The attackers are using encrypted web traffic to communicate 
 From a firewall's perspective, this looks exactly like normal web browsing: outbound HTTPS to an external server. 
 Nothing unusual about that, which is exactly the point.
 Attackers choose port 443 because it's almost always allowed through firewalls.
+
+ATTACK CHAIN (Network View):
+
+Phishing Email ────► Click ────► Malware Install ────► C2 Beacon
+     │                              │                      │
+     ▼                              ▼                      ▼
+   Email               (FileCreation)              DnsEvents
+   Table               (ProcessEvents)             NetworkFlow
+                                                   ProxyEvents
