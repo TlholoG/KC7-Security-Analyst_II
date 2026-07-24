@@ -86,3 +86,9 @@ DnsEvents
 // we see that this is an external domain that is being queried by multiple internal hosts, 
 // which is suspicious and could indicate a potential security threat or malware activity. 
 // Further investigation is needed to determine the nature of this domain and the intent of the internal hosts querying it.
+
+NetworkFlow
+| where dest_ip == "185.174.137.42"
+| project timestamp, src_ip, dest_ip, dest_port, protocol, bytes
+| take 10
+

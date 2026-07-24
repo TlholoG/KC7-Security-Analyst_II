@@ -1,0 +1,8 @@
+Multiple machines are querying this suspicious domain.
+Each of these IPs belongs to a potentially compromised host. 
+Their DNS queries prove they've been reaching out to the attacker's infrastructure.
+
+Port 443 is HTTPS. The attackers are using encrypted web traffic to communicate with compromised machines. 
+From a firewall's perspective, this looks exactly like normal web browsing: outbound HTTPS to an external server. 
+Nothing unusual about that, which is exactly the point.
+Attackers choose port 443 because it's almost always allowed through firewalls.
