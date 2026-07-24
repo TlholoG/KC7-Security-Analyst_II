@@ -91,4 +91,17 @@ NetworkFlow
 | where dest_ip == "185.174.137.42"
 | project timestamp, src_ip, dest_ip, dest_port, protocol, bytes
 | take 10
+// we can see that there is network traffic going to the external IP address
 
+ProxyEvents
+| where domain == "update-cdn-service.xyz"
+| project timestamp, src_ip, url, method, status_code
+| order by timestamp asc
+// we can see that there are multiple requests to the external domain, which could indicate that the internal hosts are communicating with a potentially malicious server. 
+// Further investigation is needed to determine the nature of this communication and whether it poses a security risk to the organization.
+
+Email
+| where sender !endswith "@whiskersandwonders.org"
+| where sender contains "whiskersandwonders"
+| project timestamp, sender, recipient, subject
+// we can see that there are emails being sent from external domains that contain the organization's name, which could indicate phishing attempts or impersonation.
