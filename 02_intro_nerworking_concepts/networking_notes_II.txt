@@ -15,3 +15,45 @@ Phishing Email ────► Click ────► Malware Install ───�
    Email               (FileCreation)              DnsEvents
    Table               (ProcessEvents)             NetworkFlow
                                                    ProxyEvents
+
+
+Final summary of timeline:
+
+let c2_domain = "update-cdn-service.xyz";
+let compromised_ips = DnsEvents
+| where query_name contains c2_domain
+| distinct client_ip;
+DnsEvents
+| where client_ip in (compromised_ips)
+| where query_name contains c2_domain
+| summarize
+    first_beacon = min(timestamp),
+    last_beacon = max(timestamp),
+    total_queries = count()
+  by client_ip
+
+
+CASE SUMMARY: Payment Shadow Campaign
+
+You've uncovered what Jamie couldn't finish investigating:
+
+Attack Summary:
+
+Initial Access: Phishing via whiskersandwonders-hr.com
+Targets: 3 employees with donation system access
+C2 Domain: update-cdn-service.xyz
+C2 IP: 185.174.137.42
+Port: 443 (HTTPS, blending with normal traffic)
+Duration: ~4 days active
+Indicators of Compromise:
+
+DNS: update-cdn-service.xyz
+IP: 185.174.137.42
+Proxy: /api/v1/status, /api/v1/config patterns
+Recommended Actions:
+
+Block C2 domain at DNS
+Block C2 IP at firewall
+Block URL patterns at proxy
+Isolate compromised hosts
+Reset credentials for affected users

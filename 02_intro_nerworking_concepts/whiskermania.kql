@@ -148,3 +148,17 @@ NetworkFlow
 ProxyEvents
 | where url matches regex @"/api/v\d+/(status|config)"
 | where domain endswith ".xyz"
+
+// Final summary of all detections
+let c2_domain = "update-cdn-service.xyz";
+let compromised_ips = DnsEvents
+| where query_name contains c2_domain
+| distinct client_ip;
+DnsEvents
+| where client_ip in (compromised_ips)
+| where query_name contains c2_domain
+| summarize
+    first_beacon = min(timestamp),
+    last_beacon = max(timestamp),
+    total_queries = count()
+  by client_ip
