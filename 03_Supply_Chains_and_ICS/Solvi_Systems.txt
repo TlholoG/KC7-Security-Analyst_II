@@ -1,0 +1,14 @@
+About
+Solvi Systems, a software company, is a key player is South Africa's energy industry ⚡.
+
+With its cutting-edge Docks software, Solvi Systems has become indispensable to major power and utility companies, 
+shaping the distribution of energy in not just South Africa, but across neighboring nations like Mozambique, Eswatini, Zimbabwe, and Namibia. 🌍
+
+However, the interconnectedness of this power grid also brings 😱 vulnerability.
+
+Help investigate an intrusion against Solvi Systems, and find out how attackers may have leveraged their access to discover vulnerabilities in the DOCKS software.
+
+Objectives
+Investigate a supply chain attack involving Industrial Control Systems (ICS)
+Understand how an attack on the ICS software can have downstream impact
+Combine multiple data sources (e.g., network logs, DNS, authentication events) to establish a detailed timeline of malicious activities—from reconnaissance to data exfiltration.
