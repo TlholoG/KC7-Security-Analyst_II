@@ -2,3 +2,24 @@
 Employees
 | where role == "CTO"
 // Alexis Khoza
+// IP: 10.10.0.7
+
+Email
+| where recipient == "alexis_khoza@solvisystems.com"
+
+Email
+| where sender has "eskom.co.za"
+| distinct sender
+| count 
+    
+// distinct urls that people with the name Mary has accessed
+let mary_ips = 
+Employees
+| where name has "Mary"
+| distinct ip_addr;
+OutboundNetworkEvents
+| where src_ip in (mary_ips)
+| distinct url
+
+
+
