@@ -11,7 +11,7 @@ Email
 | where sender has "eskom.co.za"
 | distinct sender
 | count 
-    
+
 // distinct urls that people with the name Mary has accessed
 let mary_ips = 
 Employees
@@ -21,5 +21,13 @@ OutboundNetworkEvents
 | where src_ip in (mary_ips)
 | distinct url
 
+// authentication events for people with the name Mary
+let mary_authentication = 
+Employees
+| where name has "Mary"
+| distinct username;
+AuthenticationEvents
+| where username in (mary_authentication)
+| count
 
 
