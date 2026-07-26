@@ -1,0 +1,4 @@
+// Looking for the CTO's name
+Employees
+| where role == "CTO"
+// Alexis Khoza
