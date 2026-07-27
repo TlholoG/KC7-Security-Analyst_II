@@ -34,3 +34,24 @@ AuthenticationEvents
 InboundNetworkEvents
 | where url contains "alert"
 
+// the attacker was unsuccessful in their attempt but more attempts may have been made.
+// The attaker varied their ip address and user agent to avoid detection. 
+// The following query will help identify the user agent used by the attacker and the time frame of the attack.
+InboundNetworkEvents
+| where user_agent == "Opera/8.64.(X11; Linux x86_64; kok-IN) Presto/2.9.165 Version/10.00"
+| where timestamp between (datetime("2024-05-03") .. datetime("2024-05-05"))
+// 9 attempts where made in total.
+
+//We are tracking the distinct domains the ip address used by the attacker has been associated with. 
+// This will help us identify if the attacker has been involved in any other malicious activity.
+let malicious_ips =
+InboundNetworkEvents
+| where user_agent == "Opera/8.64.(X11; Linux x86_64; kok-IN) Presto/2.9.165 Version/10.00"
+| distinct src_ip;
+PassiveDns
+| where ip in (malicious_ips)
+| distinct domain
+
+// The following query will help us identify if the attacker has been involved in any phishing attempts.
+Email
+| where link has_any ("energy-trends4u.net", "news-on-industry.com", "eco-awareness-update.net" )

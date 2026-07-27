@@ -13,3 +13,20 @@ Investigate a supply chain attack involving Industrial Control Systems (ICS)
 Understand how an attack on the ICS software can have downstream impact
 Combine multiple data sources (e.g., network logs, DNS, authentication events) to establish a detailed timeline of malicious activities—from reconnaissance to data exfiltration.
 ====================================================================================================================================================================================
+
+Cross Site script attempt.
+User agent: Opera/8.64.(X11; Linux x86_64; kok-IN) Presto/2.9.165 Version/10.00
+timestamp: 2024-05-03 14:48:08+00:00
+
+from the user agent used we can see the threat actor has done reconnaissance before malicious attack attempt
+first time stamp: 2024-05-01 00:00:00+00:00
+
+The attackers ip's used resolved to to three domains:
+energy-trends4u.net
+news-on-industry.com
+eco-awareness-update.net
+
+Three distinct email addresses where used in the attackers phishing campaing:
+news@eco-awareness-updates.net
+energy_industry_news@protonmail.com
+electric_updates@gmail.com
