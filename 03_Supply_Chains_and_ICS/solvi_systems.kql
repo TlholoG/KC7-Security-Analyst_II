@@ -55,3 +55,34 @@ PassiveDns
 // The following query will help us identify if the attacker has been involved in any phishing attempts.
 Email
 | where link has_any ("energy-trends4u.net", "news-on-industry.com", "eco-awareness-update.net" )
+
+// now that we have identified the attackers domain we see how many distinct senders have sent emails with links to the identified domains. 
+Email
+| where link has_any ("energy-trends4u.net", "news-on-industry.com", "eco-awareness-update.net" )
+| distinct sender
+
+// we can see how many different roles where targeted by the attacker.
+let target_emails =
+Email
+| where link has_any ("energy-trends4u.net", "news-on-industry.com", "eco-awareness-update.net" )
+| distinct recipient;
+Employees
+| where email_addr in (target_emails)
+| distinct role
+
+// 27 Customer Support Specialists were targeted
+let target_emails =
+Email
+| where link has_any ("energy-trends4u.net", "news-on-industry.com", "eco-awareness-update.net" )
+| distinct recipient;
+Employees
+| where email_addr in (target_emails)
+| where role == "Customer Support Specialist"
+| distinct name
+
+Employees
+| where email_addr == "carla_wharton@solvisystems.com"
+
+Email
+| where timestamp == datetime("2024-05-01 15:51:41+00:00 ")
+

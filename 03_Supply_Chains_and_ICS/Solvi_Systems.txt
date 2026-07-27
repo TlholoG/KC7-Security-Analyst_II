@@ -30,3 +30,17 @@ Three distinct email addresses where used in the attackers phishing campaing:
 news@eco-awareness-updates.net
 energy_industry_news@protonmail.com
 electric_updates@gmail.com
+
+In the job roles that were targeted, "DOCKS" is a common word shared. 
+What was picked up when the attackers were doing reconnaissance is that the word "DOCKS" was heavily researched
+
+The first email sent by the attacker was at 2024-05-01 15:51:41+00:00 
+The receipient's email address: carla_wharton@solvisystems.com
+hostname: JUSP-LAPTOP
+Sender address: news@eco-awareness-updates.net
+reply_to: electric_updates@gmail.com
+subject: [EXTERNAL] Business Opportunity: Two major energy companies merging
+Link: http://news-on-industry.com/search/online/files/public/Energy_Industry_Trends_2024_4_Solvi.docx
+
+In FileCreationEvents,
+we can see Carla clicked on the link and the file was downloaded to her computer at 2024-05-01 15:58:29+00:00
