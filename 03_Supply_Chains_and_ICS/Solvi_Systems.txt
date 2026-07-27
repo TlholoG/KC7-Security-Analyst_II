@@ -12,3 +12,4 @@ Objectives
 Investigate a supply chain attack involving Industrial Control Systems (ICS)
 Understand how an attack on the ICS software can have downstream impact
 Combine multiple data sources (e.g., network logs, DNS, authentication events) to establish a detailed timeline of malicious activities—from reconnaissance to data exfiltration.
+====================================================================================================================================================================================

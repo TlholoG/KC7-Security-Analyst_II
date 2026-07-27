@@ -30,4 +30,7 @@ AuthenticationEvents
 | where username in (mary_authentication)
 | count
 
+// identifying cross site scripting attempts
+InboundNetworkEvents
+| where url contains "alert"
 
