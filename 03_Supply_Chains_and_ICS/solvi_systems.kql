@@ -86,3 +86,9 @@ Employees
 Email
 | where timestamp == datetime("2024-05-01 15:51:41+00:00 ")
 
+ProcessEvents
+| where process_commandline contains "ecobug.exe"
+
+NetworkFlow
+| where dest_ip == "98.117.26.236"
+| where src_ip == "10.10.0.164"
