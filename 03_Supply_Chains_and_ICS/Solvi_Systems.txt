@@ -43,4 +43,4 @@ subject: [EXTERNAL] Business Opportunity: Two major energy companies merging
 Link: http://news-on-industry.com/search/online/files/public/Energy_Industry_Trends_2024_4_Solvi.docx
 
 In FileCreationEvents,
-we can see Carla clicked on the link and the file was downloaded to her computer at 2024-05-01 15:58:29+00:00
+we can see Carla clicked on the link and the file was downloaded to her computer at 
