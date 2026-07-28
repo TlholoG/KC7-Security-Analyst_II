@@ -46,3 +46,5 @@ In FileCreationEvents,
 we can see Carla clicked on the link and the file was downloaded to her computer at 2024-05-01 15:58:29+00:00
 
 The file executes and establishes connection to ip address 98.117.26.236
+Carla's machine has connected 24 times to this ip address.
+A pattern of a recurring connection is observed 1 per day at 17:38:25
