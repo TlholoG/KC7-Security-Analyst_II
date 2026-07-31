@@ -92,3 +92,11 @@ ProcessEvents
 NetworkFlow
 | where dest_ip == "98.117.26.236"
 | where src_ip == "10.10.0.164"
+
+OutboundNetworkEvents
+| where src_ip == "10.10.0.164"
+
+// This is a clear sign that Carla clicked on the link in the email and downloaded the malicious document.
+OutboundNetworkEvents
+| where src_ip == "10.10.0.164"
+| where url == "http://news-on-industry.com/search/online/files/public/Energy_Industry_Trends_2024_4_Solvi.docx"

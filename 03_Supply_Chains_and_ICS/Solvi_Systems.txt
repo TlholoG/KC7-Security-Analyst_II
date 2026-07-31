@@ -37,6 +37,7 @@ What was picked up when the attackers were doing reconnaissance is that the word
 The first email sent by the attacker was at 2024-05-01 15:51:41+00:00 
 The receipient's email address: carla_wharton@solvisystems.com
 hostname: JUSP-LAPTOP
+ip: 10.10.0.164
 Sender address: news@eco-awareness-updates.net
 reply_to: electric_updates@gmail.com
 subject: [EXTERNAL] Business Opportunity: Two major energy companies merging
@@ -56,4 +57,4 @@ We go back to the malware to see what actions it performed on the victims' machi
 
 A day after the malware is first executed the threat actor attempts to create a new user and add that user to the local administrators group.
 
-T program tried to create a new user
+The process name discovered is "ecobug.exe" we find 38 records of this file being created on Solvi System computers.
