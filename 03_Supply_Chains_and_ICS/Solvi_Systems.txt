@@ -74,4 +74,4 @@ Perhaps they wanted to better understand Solvi's code bases, or figure out how t
 Around the same time the adversaries stole data from the network share about the software lifecycle. 
 They were also seen accessing sensitive documents about the software lifecycle.
 
-The threat actors were observed reading an "internal process" document from an internal portal called ____.solvisystems.com
+The threat actors were observed reading an "internal process" document from an internal portal called devportal.solvisystems.com
