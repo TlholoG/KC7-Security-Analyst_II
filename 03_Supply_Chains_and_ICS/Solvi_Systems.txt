@@ -58,3 +58,20 @@ We go back to the malware to see what actions it performed on the victims' machi
 A day after the malware is first executed the threat actor attempts to create a new user and add that user to the local administrators group.
 
 The process name discovered is "ecobug.exe" we find 38 records of this file being created on Solvi System computers.
+=============================================================================================================
+hostname: SJ9V-MACHINE
+Name:Alexei Petrov
+ip_addr: 10.10.0.3
+Role: Docks Customer Success Manager
+
+hostname: UPLM-DESKTOP
+Name:
+username: jalee
+==============================================================================================================
+The adversaries appeared to be highly invested in learning more about Solvi's software development process. 
+Perhaps they wanted to better understand Solvi's code bases, or figure out how to inject their own malicious code in Solvi's software.
+
+Around the same time the adversaries stole data from the network share about the software lifecycle. 
+They were also seen accessing sensitive documents about the software lifecycle.
+
+The threat actors were observed reading an "internal process" document from an internal portal called ____.solvisystems.com
