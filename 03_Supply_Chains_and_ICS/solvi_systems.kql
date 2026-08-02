@@ -100,3 +100,7 @@ OutboundNetworkEvents
 OutboundNetworkEvents
 | where src_ip == "10.10.0.164"
 | where url == "http://news-on-industry.com/search/online/files/public/Energy_Industry_Trends_2024_4_Solvi.docx"
+
+InboundNetworkEvents
+|  where url contains "lifecycle"
+// URL:  https://devportal.solvisystems.com/development_lifecycle/internal_process.pdf

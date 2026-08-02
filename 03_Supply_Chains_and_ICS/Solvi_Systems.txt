@@ -75,3 +75,11 @@ Around the same time the adversaries stole data from the network share about the
 They were also seen accessing sensitive documents about the software lifecycle.
 
 The threat actors were observed reading an "internal process" document from an internal portal called devportal.solvisystems.com
+
+56.6.30.190
+13.201.46.208
+56.6.30.190
+// reconnaissance
+10.10.0.2
+10.10.0.97
+10.10.1.9
