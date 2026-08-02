@@ -1,0 +1,10 @@
+About This Game
+A threat actor is hiding in plain sight, and their commands look like complete nonsense. 
+Garbled strings, machine code, and scrambled text are everywhere in your logs. 
+The question isn't whether something malicious is happening, it's whether you can read it.
+
+In Decoding101, you learn to translate the "gibberish" that attackers use to slip past defenses. 
+From basic binary to layered multi-step encodings, you'll train your eye to recognize obfuscation patterns and your hands to peel them apart using CyberChef and dcode.fr. No coding required. 
+Just curiosity, pattern recognition, and a growing tolerance for math.
+
+By the end, you won't be scared of an encoded payload. You'll be the one doing the decoding.
