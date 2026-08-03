@@ -8,3 +8,18 @@ From basic binary to layered multi-step encodings, you'll train your eye to reco
 Just curiosity, pattern recognition, and a growing tolerance for math.
 
 By the end, you won't be scared of an encoded payload. You'll be the one doing the decoding.
+**********************************************************************************************************
+
+Recognize common encodings at a glance including binary, decimal, hexadecimal, and Base64, and know which tool operation to reach for when you spot them.
+
+Use CyberChef confidently to build, chain, and auto-detect decoding recipes, including using the Magic operation when the encoding isn't obvious.
+
+Decode basic transformations such as reversed strings, ROT13 shifts, and XOR-encrypted data, including brute-forcing when a key is unknown.
+
+Unravel multi-layered encodings where threat actors stack two or three transformations together to make detection harder.
+
+Analyze obfuscated scripts and decode their payloads without running them, a critical skill for safe malware triage.
+
+Use dcode.fr as a fallback when CyberChef's magic fails, and navigate cipher identifier results with appropriate skepticism.
+
+Tackle CTF-style cipher challenges involving visual, audio, and symbol-based ciphers, the kind you'll encounter in competitions and occasionally in the wild.
