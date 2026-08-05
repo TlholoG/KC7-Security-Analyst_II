@@ -1,0 +1,6 @@
+Describe the purpose of Azure Policy
+
+How do you ensure that your resources stay compliant? Can you be alerted if a resource's configuration has changed?
+
+Azure Policy is a service in Azure that enables you to create, assign, and manage policies that control or audit your resources. 
+These policies enforce different rules across your resource configurations so that those configurations stay compliant with your standards.
