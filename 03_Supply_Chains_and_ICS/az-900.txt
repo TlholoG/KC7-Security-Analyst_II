@@ -5,6 +5,3 @@ How do you ensure that your resources stay compliant? Can you be alerted if a re
 Azure Policy is a service in Azure that enables you to create, assign, and manage policies that control or audit your resources. 
 These policies enforce different rules across your resource configurations so that those configurations stay compliant with your standards.
 
-If your subscription expires, you lose access to all the other resources associated with the subscription. 
-However, the Microsoft Entra ID directory remains in Azure. 
-You can associate and manage the directory using a different Azure subscription.
